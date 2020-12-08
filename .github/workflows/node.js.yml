@@ -17,10 +17,17 @@ jobs:
     - name: Use Node.js ${{ matrix.node-version }}
       uses: actions/setup-node@v1
       with:
-        node-version: ${{ matrix.node-version }}
+        node-version: ${{ matrix.node-version }} 
+
     - name: Generate deployment package
       run: zip -r deploy.zip * -x "**node_modules**"
-      
+
+    - name: ls
+      run: ls
+    
+    - name: pwd
+      run: pwd
+
     - name: Get timestamp
       uses: gerred/actions/current-time@master
       id: current-time
